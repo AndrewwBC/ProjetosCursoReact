@@ -1,9 +1,9 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import Header from './Header';
 import Head from './Head';
-
+import PropTypes from 'prop-types';
 const Produto = () => {
   const [produtos, setProdutos] = React.useState(null);
   const [title, setTitle] = React.useState(null);
