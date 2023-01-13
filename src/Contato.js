@@ -17,13 +17,12 @@ const FromLeft = keyframes`
 const Container = styled.div`
   max-width: 1000px;
   margin: 0 auto;
-  margin-top: 120px;
   animation: ${FromLeft} 0.3s linear;
 `;
 
 const Content = styled.div`
   display: flex;
-  margin-top: 40px;
+  margin-top: 60px;
   gap: 32px;
 `;
 
@@ -45,18 +44,21 @@ const Contact = styled.div`
   margin-left: 18px;
 `;
 
-const Paragrapfh = styled.p`
+const Links = styled.a`
   display: flex;
   align-items: center;
   position: relative;
+  cursor: pointer;
   margin-left: 12px;
+  margin-bottom: 18px;
+  font-family: 'Poppins';
   &::before {
     content: '  ';
-    width: 18px;
-    height: 4px;
+    width: 16px;
+    height: 2px;
     top: 18px;
-    left: -24px;
-    background-color: #c9c9c9;
+    left: -26px;
+    background-color: #303030;
     position: absolute;
   }
 `;
@@ -64,6 +66,15 @@ const Paragrapfh = styled.p`
 const Contato = () => {
   return (
     <Container>
+      <h1
+        style={{
+          gridColumn: '1/-1',
+          textAlign: 'center',
+          marginBottom: '60px',
+        }}
+      >
+        CONTATO
+      </h1>
       <Head title="Contato" />
       <Header />
       <Content>
@@ -71,9 +82,9 @@ const Contato = () => {
         <Info>
           <h2>Entre em contato.</h2>
           <Contact>
-            <Paragrapfh>andrew@hotmail.com </Paragrapfh>
-            <Paragrapfh>53 9 9191 9191</Paragrapfh>
-            <Paragrapfh>Rua Ali Perto, 22</Paragrapfh>
+            <Links href="mailto:andrew@hotmail.com">andrew@hotmail.com </Links>
+            <Links href="te:5399999999">53 9 9191 9191</Links>
+            <Links href="https://www.google.com">Rua Ali Perto, 22</Links>
           </Contact>
         </Info>
       </Content>

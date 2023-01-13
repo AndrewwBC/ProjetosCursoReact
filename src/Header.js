@@ -10,26 +10,27 @@ const Header = () => {
           padding: '6px',
           backgroundColor: '#202020',
           borderRadius: '4px',
-          color: 'white',
+          color: '#c9c9c9',
           fontFamily: 'Roboto',
+          marginRight: '12px',
         }}
         to="/"
-        activeStyle={{ color: 'yellow' }}
+        activeStyle={{ color: 'white', backgroundColor: '#101010' }}
         end
       >
         Produtos
-      </NavLink>{' '}
-      |{' '}
+      </NavLink>
+
       <NavLink
         style={{
           padding: '6px',
           backgroundColor: '#202020',
           borderRadius: '4px',
-          color: 'white',
+          color: '#c9c9c9',
           fontFamily: 'Roboto',
         }}
         to="/contato"
-        activeStyle={{ color: 'yellow' }}
+        activeStyle={{ color: 'white', backgroundColor: '#101010' }}
       >
         Contato
       </NavLink>

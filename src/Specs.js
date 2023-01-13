@@ -1,20 +1,27 @@
 import React from 'react';
-import Header from './Header';
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Head from './Head';
 
 const Specs = () => {
   const params = useParams();
   const [specs, setSpecs] = React.useState(null);
+  const flow = useNavigate();
+
+  if (window.location.href === `http://localhost:3000/specs/${params.nome}`) {
+    document.onclick = ({ target }) => {
+      if (target.src !== specs.fotos[0].src) {
+        flow('/');
+      }
+    };
+  }
 
   React.useEffect(() => {
     fetch(`https://ranekapi.origamid.dev/json/api/produto/${params.nome}`).then(
       (r) => r.json().then((json) => setSpecs(json)),
     );
   }, []);
-  if (specs === null) return <Header />;
-  console.log(specs);
+  if (specs === null) return null;
 
   const Container = styled.div`
     display: flex;
@@ -22,7 +29,7 @@ const Specs = () => {
     gap: 48px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40px;
+    margin-top: 48px;
   `;
 
   const Infos = styled.div`
@@ -78,7 +85,6 @@ const Specs = () => {
 
   return (
     <>
-      <Header />
       <Head title="Specs" />
       <Container>
         <Img width={400} src={specs.fotos[0].src}></Img>
