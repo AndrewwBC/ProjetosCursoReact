@@ -1,19 +1,24 @@
 import React from 'react';
-import Produto from './Produto';
-import Specs from './Specs';
-import Contato from './Contato';
-import Error404 from './Error404';
+import './App.css';
+import Footer from './Components/Footer';
+import Header from './Components/Header';
+import Home from './Components/Home';
+import Login from './Components/Login/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
-        <Route path="/" element={<Produto />} />
-        <Route path="contato" element={<Contato />} />
-        <Route path="specs/:nome" element={<Specs />} />
-        <Route path="*" element={<Error404 />} />
+        <Route path="/" element={<Home />}>
+          Home
+        </Route>
+        <Route path="/login/*" element={<Login />}>
+          Login
+        </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
